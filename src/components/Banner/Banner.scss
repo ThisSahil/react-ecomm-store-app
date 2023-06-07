@@ -1,0 +1,98 @@
+@import "../../css-config/mixins.scss";
+.hero-banner {
+  padding: 40px 0;
+  position: relative;
+  height: 500px;
+  background: #06beb6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #48b1bf,
+    #06beb6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #48b1bf,
+    #06beb6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  @include md {
+    height: calc(100vh - 80px);
+  }
+  .content {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 0 auto;
+
+    @include md {
+      flex-direction: row;
+      max-width: 1200px;
+    }
+  }
+
+  .banner-img {
+    position: relative;
+    z-index: 9;
+    width: 200px;
+    margin-bottom: 20px;
+    @include md {
+      width: 50vw;
+      height: 100vh;
+      margin-right: 60px;
+      margin-top: 75px;
+      margin-bottom: 0;
+    }
+
+    @include xxl {
+      width: 600px;
+      margin-right: 0;
+      margin-top: 0;
+    }
+  }
+
+  .text-content {
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-Start;
+    align-items: center;
+
+    @include md {
+      position: absolute;
+      //   left: 10px;
+      //   top: 20%;
+      //   transform: translateY(-50%);
+    }
+
+    @include xxl {
+      left: 0;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 20px;
+
+      @include md {
+        font-size: 100px;
+      }
+
+      p {
+        max-width: 300px;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+
+        @include md {
+          max-width: 500px;
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
